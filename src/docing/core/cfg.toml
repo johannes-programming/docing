@@ -1,9 +1,9 @@
-[classical-patterns-by-name-prefix]
+[magic-method.operations]
 "" = "self%sother"
 i = "self%s=other"
 r = "other%sself"
 
-[classical-operators-by-name]
+[magic-method.operators]
 add = "+"
 and = "&"
 floordiv = "//"
@@ -17,7 +17,7 @@ sub = "-"
 truediv = "/"
 xor = "^"
 
-[atypical-magic-implements-by-name]
+[magic-method.implements]
 abs = "abs(self)"
 bool = "bool(self)"
 call = "calling self"
@@ -26,12 +26,16 @@ divmod = "divmod(self, other)"
 eq = "self==other"
 float = "float(self)"
 floor = "floor(self)"
+format = "format(self)"
 ge = "self>=other"
 gt = "self>other"
 hash = "hash(self)"
+index = "operators.index(self)"
 int = "int(self)"
 invert = "~self"
+iter = "iter(self)"
 le = "self<=other"
+len = "len(self)"
 lt = "self<other"
 modf = "math.modf(self)"
 ne = "self!=other"
@@ -40,10 +44,11 @@ pos = "+self"
 pow = "pow(self, other)"
 rdivmod = "divmod(other, self)"
 repr = "repr(self)"
+reversed = "reversed(self)"
 round = "round(self) and round(self, other)"
 rpow = "pow(other, self)"
 str = "str(self)"
 trunc = "math.trunc(self)"
 
-[atypical-magic-explanations-by-name]
+[magic-method.explanations]
 init = "initializes self"

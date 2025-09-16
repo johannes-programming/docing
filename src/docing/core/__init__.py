@@ -36,16 +36,20 @@ class Util(enum.Enum):
         b: str
         c: str
         d: str
-        for a, b in self.data["classical-patterns-by-name-prefix"].items():
-            for c, d in self.data["classical-operators-by-name"].items():
+        for a, b in self.data["magic-method"]["operations"].items():
+            for c, d in self.data["magic-method"]["operators"].items():
                 ans[a + c] = "implements %s" % (b % d)
-        for a, b in self.data["atypical-magic-implements-by-name"].items():
+        for a, b in self.data["magic-method"]["implements"].items():
             ans[a] = "implements %s" % b
-        for a, b in self.data["atypical-magic-explanations-by-name"].items():
+        for a, b in self.data["magic-method"]["explanations"].items():
             ans[a] = b
         return ans
 
 
 def easy(target: Any) -> Any:
-    target.__doc__ = Util.util.lookup[str(target.__name__)]
+    target.__doc__ = geteasydoc(target.__name__)
     return target
+
+
+def geteasydoc(name: Any) -> str:
+    return Util.util.lookup[str(name)]
